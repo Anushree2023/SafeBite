@@ -34,11 +34,12 @@ class Camera : AppCompatActivity() {
     private lateinit var capturedImageView: ImageView
 //    private lateinit var predictionTextView: TextView
     lateinit var back:Button
-
+    lateinit var out:Button
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private val IMAGE_CAPTURE_REQUEST_CODE = 101
     private var capturedImageBitmap: Bitmap? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +54,10 @@ class Camera : AppCompatActivity() {
         back.setOnClickListener{
             val intent=Intent(this,MainActivity::class.java)
             startActivity(intent)
+        }
+        out.setOnClickListener{
+            val intent2=Intent(this,Output::class.java)
+            startActivity(intent2)
         }
 
         captureImageButton.setOnClickListener {

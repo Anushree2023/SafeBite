@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/black"
+        android:id="@+id/ScanOutBtn"
         android:text="Scan"
         android:textColor="@color/white"
         ></Button>

@@ -34,7 +34,7 @@ class Camera : AppCompatActivity() {
     private lateinit var capturedImageView: ImageView
 //    private lateinit var predictionTextView: TextView
     lateinit var back:Button
-    lateinit var out:Button
+     lateinit var out:Button
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private val IMAGE_CAPTURE_REQUEST_CODE = 101
@@ -49,6 +49,7 @@ class Camera : AppCompatActivity() {
          back=findViewById(R.id.backbtn)
         captureImageButton = findViewById(R.id.captureImageButton)
         capturedImageView = findViewById(R.id.capturedImageView)
+        out=findViewById(R.id.ScanOutBtn)
 //        predictionTextView = findViewById(R.id.predictionTextView)
 
         back.setOnClickListener{

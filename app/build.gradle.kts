@@ -68,58 +68,10 @@ dependencies {
 
     // CameraX Extensions (For advanced features like HDR, Night mode, etc.)
     implementation ("androidx.camera:camera-extensions:1.3.0")
+
+    implementation ("com.google.ai.client.generativeai:generativeai:0.4.0")// Latest Gemini API SDK
+    implementation ("com.google.code.gson:gson:2.10")// JSON parsing (Optional)
+
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Convert JSON responses
+
 }
-//plugins {
-//    id("com.android.application")
-//    id("org.jetbrains.kotlin.android")
-//}
-//
-//android {
-//    namespace = "anu.trial.safebite"
-//    compileSdk = 35
-//
-//    defaultConfig {
-//        applicationId = "anu.trial.safebite"
-//        minSdk = 24
-//        targetSdk = 35
-//        versionCode = 1
-//        versionName = "1.0"
-//
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//    }
-//
-//    buildTypes {
-//        release {
-//            isMinifyEnabled = false
-//            proguardFiles(
-//                getDefaultProguardFile("proguard-android-optimize.txt"),
-//                "proguard-rules.pro"
-//            )
-//        }
-//    }
-//    compileOptions {
-//        sourceCompatibility = JavaVersion.VERSION_1_8
-//        targetCompatibility = JavaVersion.VERSION_1_8
-//    }
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
-//}
-//
-//dependencies {
-//
-//    implementation("androidx.core:core-ktx:1.15.0")
-//    implementation("androidx.appcompat:appcompat:1.7.0")
-//    implementation("com.google.android.material:material:1.12.0")
-//    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
-//    testImplementation("junit:junit:4.13.2")
-//    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-//    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-//    implementation ("com.google.mlkit:text-recognition:16.0.0' // Or the latest version from Google ML Kit documentation")
-//
-//    // ML Kit Text Recognition - Latin and Indic models are common (add others if needed based on your target language)
-//    implementation ("com.google.mlkit:text-recognition-latin:16.0.0") // For Latin based languages like English, Spanish, French etc.
-//
-//    // (Optional but good practice) - Coroutines for background tasks (though not strictly necessary for basic ML Kit)
-//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-//}

@@ -27,12 +27,12 @@
     <ImageView
         android:id="@+id/capturedImageView"
         android:layout_marginBottom="50dp"
-        android:layout_width="500dp"
+        android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_gravity="top"
         android:background="@android:color/darker_gray"
         android:contentDescription="Captured Image"
-        android:scaleType="fitXY" />
+        android:scaleType="centerInside" />
 
     <Button
         android:id="@+id/captureImageButton"

@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+//    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -73,5 +75,13 @@ dependencies {
     implementation ("com.google.code.gson:gson:2.10")// JSON parsing (Optional)
 
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Convert JSON responses
+    implementation ("com.google.android.material:material:1.11.0")
+
+//    implementation ("com.google.firebase:firebase-firestore-ktx:24.4.2")
+//    implementation ("com.google.firebase:firebase-auth-ktx:22.1.1")
+//    implementation(platform("com.google.firebase:firebase-bom:33.11.0"))
+//    implementation("com.google.firebase:firebase-analytics")
+
+
 
 }

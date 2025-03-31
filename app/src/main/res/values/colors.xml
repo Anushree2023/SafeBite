@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="tomato">#EA2B00</color>
     <color name="offwhite">#FFF8DC</color>
+    <color name="lightgray">#F5F5F5</color>
+    <color name="green">#a5bf36</color>
 </resources>

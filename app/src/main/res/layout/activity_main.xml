@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="bottom"
-    android:padding="16dp"
-    tools:context=".MainActivity"
-    android:background="@color/offwhite">
+    android:background="@color/offwhite"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Ingredient Scanner"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="24dp"/>
 
-        >
-
-        <Button
-            android:id="@+id/ScanButtn"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/black"
-            android:text="Snap"
-            android:textColor="@color/white" />
-
-
-    </LinearLayout>
-
+    <!-- Illustration -->
     <ImageView
-        android:id="@+id/capturedImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/illustration"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/scan_illustration"
+         />
+
+    <!-- Scan Button -->
+    <Button
+        android:id="@+id/ScanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        android:visibility="gone"
-        android:background="@android:color/darker_gray"
-        android:contentDescription="Captured Image" />
+        android:text="📷  Scan Ingredient"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/green" />
 
-
-
+    <!-- Personalize Button -->
+    <Button
+        android:id="@+id/PersonalizeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="✨  Personalize Scan"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/green"
+        android:background="@drawable/custom_button_background" />
 
 </LinearLayout>
+
+
+
+

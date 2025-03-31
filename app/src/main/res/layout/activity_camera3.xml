@@ -1,66 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cameraActivityRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/offwhite"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/offwhite">
+    android:padding="0dp">
 
+    <!-- Top App Bar -->
     <LinearLayout
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/black"
-        android:gravity="top"
-        android:orientation="horizontal">
+        android:background="@color/green"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="69dp"
             android:id="@+id/backbtn"
-            android:background="@color/offwhite"
-            android:drawableTop="@drawable/baseline_arrow_back_24">
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:drawableLeft="@drawable/baseline_arrow_back_24"
+            >
+
         </Button>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Camera Scan"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Captured Image Preview (weight used to fill remaining space) -->
     <ImageView
         android:id="@+id/capturedImageView"
-        android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_gravity="top"
-        android:background="@android:color/darker_gray"
-        android:contentDescription="Captured Image"
-        android:scaleType="centerInside" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:background="@drawable/image_preview_background"
+        android:contentDescription="Captured Image" />
 
-    <Button
-        android:id="@+id/captureImageButton"
-        android:layout_width="500dp"
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:id="@+id/bottomButtonsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/black"
-        android:text="Snap"
-        android:textColor="@color/white" />
-    <Button
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/black"
-        android:id="@+id/ScanOutBtn"
-        android:text="Scan"
-        android:textColor="@color/white"
-        ></Button>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
 
+        <Button
+            android:id="@+id/captureImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📸 Snap Photo"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_pressed"
+            android:layout_marginBottom="12dp" />
 
-    <!--    <TextView-->
-<!--        android:layout_width="500dp"-->
-<!--        android:layout_height="500dp"-->
-<!--        android:id="@+id/predictionTextView"-->
-<!--        android:background="@color/black"-->
-<!--        ></TextView>-->
-
-
-
+        <Button
+            android:id="@+id/ScanOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔍 Scan Ingredients"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_pressed" />
+    </LinearLayout>
 
 </LinearLayout>

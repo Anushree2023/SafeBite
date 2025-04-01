@@ -14,6 +14,8 @@ class MainActivity2 : AppCompatActivity() {
     lateinit var back: Button
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -51,13 +53,17 @@ class MainActivity2 : AppCompatActivity() {
             return
         }
 
-        val userPreferences = hashMapOf(
-            "age" to age,
-            "gender" to gender,
-            "allergies" to allergies,
-            "avoid" to avoidList
-        )
+        val intent = Intent(this, Camera::class.java).apply {
+            putExtra("isPersonalized", true)
+            putExtra("age", age)
+            putExtra("gender", gender)
+            putExtra("allergies", allergies)
+            putExtra("avoid", avoidList)
+        }
+        startActivity(intent)
     }
+
+
 }
 
 

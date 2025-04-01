@@ -2,12 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/offwhite"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/green">
         <Button
             android:id="@+id/backbtn2"
             android:layout_width="50dp"
@@ -75,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save Preferences"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/black"
             android:textColor="@android:color/white"
             android:layout_marginTop="16dp"/>
     </LinearLayout>

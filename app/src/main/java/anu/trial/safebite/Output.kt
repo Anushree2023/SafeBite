@@ -1,3 +1,4 @@
+
 package anu.trial.safebite
 
 import android.content.Intent
@@ -35,22 +36,3 @@ class Output : AppCompatActivity() {
 
 
 
-//package anu.trial.safebite
-//
-//import android.os.Bundle
-//import android.widget.TextView
-//import android.widget.Toast
-//import androidx.appcompat.app.AppCompatActivity
-//
-//class Output : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_output)
-//
-//        val resultTextView = findViewById<TextView>(R.id.resultTextView)
-//        val result = intent.getStringExtra("API_RESULT") ?: "No result available"
-//        Toast.makeText(this, "${result}", Toast.LENGTH_LONG).show()
-//        //resultTextView.text = result
-//
-//    }
-//}

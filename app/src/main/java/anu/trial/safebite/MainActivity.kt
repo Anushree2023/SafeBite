@@ -28,6 +28,7 @@ import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import java.io.ByteArrayOutputStream
+import com.airbnb.lottie.LottieAnimationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
 
         scanBtn = findViewById(R.id.ScanButton)
         person = findViewById(R.id.PersonalizeButton)
+        val lottieAnimation = findViewById<LottieAnimationView>(R.id.lottieAnimation)
+
+        // Play animation
+        lottieAnimation.playAnimation()
+
+        // Stop animation
+        // lottieAnimation.cancelAnimation()
 
         scanBtn.setOnClickListener {
             val intent = Intent(this, Camera::class.java)

@@ -76,7 +76,7 @@ dependencies {
 
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Convert JSON responses
     implementation ("com.google.android.material:material:1.11.0")
-
+    implementation("com.airbnb.android:lottie:6.5.2")
 //    implementation ("com.google.firebase:firebase-firestore-ktx:24.4.2")
 //    implementation ("com.google.firebase:firebase-auth-ktx:22.1.1")
 //    implementation(platform("com.google.firebase:firebase-bom:33.11.0"))

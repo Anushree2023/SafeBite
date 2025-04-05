@@ -2,6 +2,7 @@ package anu.trial.safebite
 
 import android.Manifest
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -11,7 +12,9 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -22,13 +25,16 @@ import com.google.ai.client.generativeai.type.content
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
 
 class Camera : AppCompatActivity() {
-    private lateinit var captureImageButton: Button
+    private lateinit var captureImageButton: ImageButton
     private lateinit var capturedImageView: ImageView
-    private lateinit var scanOutButton: Button
-    private lateinit var backButton: Button
+    private lateinit var scanOutButton: ImageButton
+    private lateinit var backButton: ImageButton
+    private lateinit var progressBar: ProgressBar
+
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private val IMAGE_CAPTURE_REQUEST_CODE = 101
@@ -42,6 +48,7 @@ class Camera : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera3)
+
 
         backButton = findViewById(R.id.backbtn)
         captureImageButton = findViewById(R.id.captureImageButton)
@@ -63,17 +70,43 @@ class Camera : AppCompatActivity() {
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-
         scanOutButton.setOnClickListener {
             capturedImageBitmap?.let { bitmap ->
-                CoroutineScope(Dispatchers.Main).launch {
+                // Show loading dialog
+                val loadingDialog = Dialog(this)
+                loadingDialog.setContentView(R.layout.loadingscreen)
+                loadingDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+                loadingDialog.setCancelable(false) // Prevent user from closing while loading
+                loadingDialog.show()
+
+                // Start background task
+                CoroutineScope(Dispatchers.IO).launch {
                     val responseText = analyzeImage(bitmap)
-                    val intent = Intent(this@Camera, Output::class.java)
-                    intent.putExtra("CURRRESPONSE", responseText)
-                    startActivity(intent)
+
+                    // Switch to Main thread to update UI
+                    withContext(Dispatchers.Main) {
+                        loadingDialog.dismiss() // Dismiss dialog when processing is done
+
+                        val intent = Intent(this@Camera, Output::class.java)
+                        intent.putExtra("CURRRESPONSE", responseText)
+                        startActivity(intent)
+                    }
                 }
             } ?: Toast.makeText(this, "Capture an image first!", Toast.LENGTH_SHORT).show()
         }
+
+
+
+//        scanOutButton.setOnClickListener {
+//            capturedImageBitmap?.let { bitmap ->
+//                CoroutineScope(Dispatchers.Main).launch {
+//                    val responseText = analyzeImage(bitmap)
+//                    val intent = Intent(this@Camera, Output::class.java)
+//                    intent.putExtra("CURRRESPONSE", responseText)
+//                    startActivity(intent)
+//                }
+//            } ?: Toast.makeText(this, "Capture an image first!", Toast.LENGTH_SHORT).show()
+//        }
 
         captureImageButton.setOnClickListener {
             checkCameraPermissionAndOpenCamera()
@@ -112,7 +145,7 @@ class Camera : AppCompatActivity() {
                 val bitmap = BitmapFactory.decodeFile(imageFile.absolutePath)
                 capturedImageBitmap = bitmap
                 capturedImageView.setImageBitmap(bitmap)
-                capturedImageView.visibility = View.INVISIBLE
+                capturedImageView.visibility = View.VISIBLE
             } else {
                 Toast.makeText(this, "Failed to capture image!", Toast.LENGTH_SHORT).show()
             }

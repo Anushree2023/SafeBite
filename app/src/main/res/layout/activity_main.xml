@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/offwhite"
     android:padding="24dp"
     android:gravity="center_horizontal"
-    android:layout_gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green"
@@ -35,26 +35,26 @@
         android:layout_margin="15dp"/>
     </LinearLayout>
 
-    <!-- Illustration -->
-    <ImageView
-        android:id="@+id/illustration"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/scan_illustration"
-         />
+<!--    &lt;!&ndash; Illustration &ndash;&gt;-->
+<!--    <ImageView-->
+<!--        android:id="@+id/illustration"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="220dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@drawable/scan_illustration"-->
+<!--         />-->
 
     <!-- Scan Button -->
 
-    <Button
-        android:id="@+id/ScanButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="📷  Scan Ingredient"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/black"
-        android:background="@drawable/custom_button_background" />
+<!--    <Button-->
+<!--        android:id="@+id/ScanButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:text="📷  Scan Ingredient"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:backgroundTint="@color/black"-->
+<!--        android:background="@drawable/custom_button_background" />-->
 
     <!-- Personalize Button -->
     <Button
@@ -62,12 +62,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="✨  Personalize Scan"
+        android:layout_alignParentBottom="true"
+        android:text="✨  Get Started"
         android:textColor="@color/white"
         android:backgroundTint="@color/black"
         android:background="@drawable/custom_button_background" />
 
-</LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimation"
+        android:layout_width="wrap_content"
+        android:padding="2dp"
+        android:layout_height="248dp"
+        android:layout_above="@id/PersonalizeButton"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/startanimation" />
+
+
+</RelativeLayout>
 
 
 

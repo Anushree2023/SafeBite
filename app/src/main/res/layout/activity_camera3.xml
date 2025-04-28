@@ -18,7 +18,19 @@
         android:background="@color/green"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:padding="10dp">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/backbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button_pressed"
+            android:src="@drawable/arrow_back_ios_new_24px"
+            android:backgroundTint="@color/white"
+            android:gravity="center"/>
 
 
         <TextView
@@ -28,7 +40,11 @@
             android:text="Camera Scan"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
+
+
     </LinearLayout>
 
     <!-- Captured Image Preview (weight used to fill remaining space) -->
@@ -51,9 +67,8 @@
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
        >
-
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/backbtn"
+            android:id="@+id/PersonalizeBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -61,9 +76,13 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_button_pressed"
-            android:src="@drawable/arrow_back_ios_new_24px"
+            android:src="@drawable/account_circle_24px"
             android:backgroundTint="@color/white"
-            android:gravity="center"/>
+            android:gravity="center">
+
+        </androidx.appcompat.widget.AppCompatImageButton>
+
+
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/captureImageButton"

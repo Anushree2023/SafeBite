@@ -33,16 +33,16 @@ import com.airbnb.lottie.LottieAnimationView
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var scanBtn: Button
-    lateinit var person:Button
+    private lateinit var scanBtn: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        scanBtn = findViewById(R.id.ScanButton)
-        person = findViewById(R.id.PersonalizeButton)
+        scanBtn = findViewById(R.id.getstartedbtn)
+
         val lottieAnimation = findViewById<LottieAnimationView>(R.id.lottieAnimation)
 
         // Play animation
@@ -53,15 +53,11 @@ class MainActivity : AppCompatActivity() {
 
         scanBtn.setOnClickListener {
             val intent = Intent(this, Camera::class.java)
-            intent.putExtra("isPersonalized", false)
             startActivity(intent)
 
 
         }
-        person.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
-            startActivity(intent)
-        }
+
     }
 }
 

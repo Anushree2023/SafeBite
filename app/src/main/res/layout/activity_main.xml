@@ -58,7 +58,7 @@
 
     <!-- Personalize Button -->
     <Button
-        android:id="@+id/PersonalizeButton"
+        android:id="@+id/getstartedbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:padding="2dp"
         android:layout_height="248dp"
-        android:layout_above="@id/PersonalizeButton"
+        android:layout_above="@id/getstartedbtn"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/startanimation" />

@@ -44,16 +44,21 @@ class Camera : AppCompatActivity() {
 
     private var isPersonalized: Boolean = false
     private var userPreferences: String = ""
-
+    lateinit var person:ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera3)
 
-
+        person = findViewById(R.id.PersonalizeBtn)
         backButton = findViewById(R.id.backbtn)
         captureImageButton = findViewById(R.id.captureImageButton)
         capturedImageView = findViewById(R.id.capturedImageView)
         scanOutButton = findViewById(R.id.ScanOutBtn)
+        person.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("isPersonalized", false)
+            startActivity(intent)
+        }
 
         // Get intent data
         isPersonalized = intent.getBooleanExtra("isPersonalized", false)

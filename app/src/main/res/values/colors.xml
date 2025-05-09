@@ -7,4 +7,12 @@
     <color name="lightgray">#F5F5F5</color>
     <color name="green">#a5bf36</color>
     <color name="pink">#FFD5C0</color>
+    <color name="soft_yellow">#FFF9C4</color>
+    <color name="lightgreen">#d9ffb3</color>
+    <color name="coral">#FFCCBC</color>
+    <color name="soft_black">#212121</color>
+    <color name="accent_yellow">#FFF176</color>
+    <color name="lavender">#E1BEE7</color>
+
+
 </resources>

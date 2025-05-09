@@ -14,13 +14,11 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
         android:padding="12dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:elevation="4dp"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/offwhite"
         android:clipToPadding="false">
     <!-- App Title -->
     <TextView
@@ -35,28 +33,6 @@
         android:layout_margin="15dp"/>
     </LinearLayout>
 
-<!--    &lt;!&ndash; Illustration &ndash;&gt;-->
-<!--    <ImageView-->
-<!--        android:id="@+id/illustration"-->
-<!--        android:layout_width="220dp"-->
-<!--        android:layout_height="220dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:src="@drawable/scan_illustration"-->
-<!--         />-->
-
-    <!-- Scan Button -->
-
-<!--    <Button-->
-<!--        android:id="@+id/ScanButton"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="12dp"-->
-<!--        android:text="📷  Scan Ingredient"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:backgroundTint="@color/black"-->
-<!--        android:background="@drawable/custom_button_background" />-->
-
-    <!-- Personalize Button -->
     <Button
         android:id="@+id/getstartedbtn"
         android:layout_width="match_parent"
@@ -72,8 +48,9 @@
         android:id="@+id/lottieAnimation"
         android:layout_width="wrap_content"
         android:padding="2dp"
-        android:layout_height="248dp"
+        android:layout_height="600dp"
         android:layout_above="@id/getstartedbtn"
+        android:backgroundTint="@color/lavender"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/startanimation" />

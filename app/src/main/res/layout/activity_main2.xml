@@ -27,12 +27,14 @@
             android:text="Personalized Scan Form"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:paddingBottom="10dp"/>
 
         <EditText
             android:id="@+id/ageInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:hint="Enter Age"
             android:inputType="number" />
 
@@ -46,12 +48,14 @@
                 android:id="@+id/maleRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="Male"/>
 
             <RadioButton
                 android:id="@+id/femaleRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="Female"/>
         </RadioGroup>
 
@@ -59,17 +63,20 @@
             android:id="@+id/allergyInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:hint="Enter Allergies (comma separated)"/>
 
         <EditText
             android:id="@+id/avoidInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:hint="Enter Ingredients to Avoid (comma separated)"/>
         <EditText
             android:id="@+id/disease"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:hint="Enter disease (if no enter no disease)"/>
 
         <Button

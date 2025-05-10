@@ -101,18 +101,6 @@ class Camera : AppCompatActivity() {
         }
 
 
-
-//        scanOutButton.setOnClickListener {
-//            capturedImageBitmap?.let { bitmap ->
-//                CoroutineScope(Dispatchers.Main).launch {
-//                    val responseText = analyzeImage(bitmap)
-//                    val intent = Intent(this@Camera, Output::class.java)
-//                    intent.putExtra("CURRRESPONSE", responseText)
-//                    startActivity(intent)
-//                }
-//            } ?: Toast.makeText(this, "Capture an image first!", Toast.LENGTH_SHORT).show()
-//        }
-
         captureImageButton.setOnClickListener {
             checkCameraPermissionAndOpenCamera()
         }
@@ -169,23 +157,40 @@ class Camera : AppCompatActivity() {
             val inputContent = content {
                 image(bitmap)
                 if (isPersonalized) {
-                    text("Extract text from this image and check for harmful ingredients parameters of safe,moderate , harmful. Consider these user preferences:\n$userPreferences And specify the sources where those ingredients are stated as harmful ")
-                } else {
-                    text("Extract text from this image and list harmful ingredients and 1.  Please list all ingredients from the provided list that are considered potentially harmful for consumption.\n" +
+                    text("Extract text from this image and list harmful ingredients  Consider these user preferences:\n" +
+                            "$userPreferences and1.  Please list all ingredients from the provided list that are considered potentially harmful for consumption \n" +
                             "2.  For each harmful ingredient identified, assign a severity index on a scale of 1 to 5, where:\n" +
                             "     1 = Low severity (potential mild side effects)\n" +
                             "    5 = High severity (potential significant health risks)\n" +
                             "     Provide a brief explanation of why each ingredient is considered harmful.\n" +
-                            "3.  Generate data suitable for a pie chart visualization that represents the distribution of the severity indices for the identified harmful ingredients. The pie chart should show the proportion of each severity level.\n" +
+                            "3.  Also classify the overall safety of app into SAFE , MODERATE , AVOID\n" +
                             "\n" +
                             "Output the results in the following format:\n" +
                             "\n" +
                             "Harmful Ingredients:\n" +
-                            "- Ingredient: [Ingredient Name]\n" +
-                            "  Severity Index: [Severity Index] (Explanation: [Brief Explanation])\n" +
+                            " Ingredient: [Ingredient Name]\n" +
+                            "  Severity Index: [Severity Index]" +
+                            " (Explanation: Brief Explanation)\n" +
                             "\n" +
-                            "Severity Index Pie Chart Data:\n" +
-                            "- Severity 1: [Percentage or count]\n" )
+                            " Safe Index:[classification into safe , moderate ,avoid\n"+
+                            "Present output in ordered list with endline spaces keep good presentation and don't keep an opening and closing statement in output  ")
+                } else {
+                    text("Extract text from this image and list harmful ingredients  1.  Please list all ingredients from the provided list that are considered potentially harmful for consumption \n" +
+                            "2.  For each harmful ingredient identified, assign a severity index on a scale of 1 to 5, where:\n" +
+                            "     1 = Low severity (potential mild side effects)\n" +
+                            "    5 = High severity (potential significant health risks)\n" +
+                            "     Provide a brief explanation of why each ingredient is considered harmful.\n" +
+                            "3.  Also classify the overall safety of app into SAFE , MODERATE , AVOID\n" +
+                            "\n" +
+                            "Output the results in the following format:\n" +
+                            "\n" +
+                            "Harmful Ingredients:\n" +
+                            " Ingredient: [Ingredient Name]\n" +
+                            "  Severity Index: [Severity Index]" +
+                            " (Explanation: Brief Explanation)\n" +
+                            "\n" +
+                            " Safe Index:[classification into safe , moderate ,avoid\n" +
+                            "Present output in ordered list with endline spaces keep good presentation and don't keep an opening and closing statement in output " )
 
                 }
             }

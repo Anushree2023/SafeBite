@@ -210,7 +210,7 @@ class Camera : AppCompatActivity() {
                 Toast.makeText(this, "Failed to get response from API", Toast.LENGTH_LONG).show()
             }
         }
-        return "Unable to fetch result"
+        return "Unable to fetch result ."
     }
 }
 
